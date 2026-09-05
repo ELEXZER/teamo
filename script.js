@@ -944,19 +944,37 @@ function comprobarFinal() {
    REINICIAR
 ========================= */
 
+/* =========================
+   REINICIAR
+========================= */
+
 reiniciar.addEventListener(
     "click",
     () => {
 
-        progreso = 0;
+        mensaje.classList.add("oculto");
 
-        terminado = false;
+        setTimeout(() => {
 
-        mensaje.classList.add(
-            "oculto"
-        );
+            progreso = 0;
 
-        iniciado = true;
+            terminado = false;
+
+            iniciado = true;
+
+            ultimaY = null;
+
+            mouseY = null;
+
+            flores.forEach(flor => {
+
+                flor.profundidad = Math.random();
+
+            });
+
+            inicio.classList.add("ocultar");
+
+        }, 500);
 
     }
 );
